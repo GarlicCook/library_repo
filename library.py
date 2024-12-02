@@ -33,6 +33,6 @@ def count_faces(image_path):
 
 
 # 로컬 이미지 경로 설정
-image_path = './library_repo/sample_image/gang.jpg'  # 이미지 파일 경로
+image_path = 'sample_image/gang.jpg'  # 이미지 파일 경로
 number_of_faces = count_faces(image_path)
 print(f"이미지에서 발견된 얼굴의 수: {number_of_faces}")
