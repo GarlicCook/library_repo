@@ -68,7 +68,7 @@ class CustomBlurFilter:
 # 클래스 사용 예시
 if __name__ == "__main__":
     # 이미지 파일 경로를 지정하세요
-    image_path = "C:/Users/hong0/vscode.py/steak.jpg"  # "example.jpg"를 처리할 이미지 파일 경로로 교체
+    image_path = "steak.jpg"  # "example.jpg"를 처리할 이미지 파일 경로로 교체
     
     try:
         # CustomBlurFilter 클래스 초기화
