@@ -1,10 +1,14 @@
 class ImagePreprocessor():
     def __init__(self):
         pass
-    def first_task(self):
+    def feat1(self):
         pass
-    def second_task(self):
+    def feat2(self):
         pass
-    def third_task(self):
+    def feat3(self):
+        pass
+    def feat4(self):
+        pass
+    def feat5(self):
         pass
     
