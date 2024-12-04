@@ -83,12 +83,11 @@ class ImagePreprocessor():
     """
     여기다가 각자 코드 추가하셔서 merge하시면 될 것 같습니다.
     """
-    def first_task(self):
-        pass
-    def second_task(self):
-        pass
-    def third_task(self):
-        pass
+    def feat2(self):
+      pass
+    def feat3(self):
+      pass
+
 
 #실행 예제
 if __name__ == "__main__":
