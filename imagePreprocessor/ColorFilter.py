@@ -80,25 +80,14 @@ class ImagePreprocessor():
         cv2.destroyAllWindows()
         return self
     
-    """
-    여기다가 각자 코드 추가하셔서 merge하시면 될 것 같습니다.
-    """
-    def first_task(self):
-        pass
-    def second_task(self):
-        pass
-    def third_task(self):
-        pass
 
 #실행 예제
 if __name__ == "__main__":
     #이미지 경로 설정
-    image_path = './data/4.jpg'
+    image_path = './picture/100.jpg'
 
     #이미지전처리기 실행
     processor = ImagePreprocessor(image_path)
     user_color = (201, 251, 206)
     processor.custom_colorfilter(user_color)
-    #processor.deepskyblue_colorfilter()
     processor.show()
-    
