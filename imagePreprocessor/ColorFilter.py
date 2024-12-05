@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-class ImagePreprocessor():
+class ColorFilter():
     #이미지 로드
     def __init__(self, image_path):
         self.image = cv2.imread(image_path)
@@ -80,17 +80,6 @@ class ImagePreprocessor():
         cv2.destroyAllWindows()
         return self
     
-<<<<<<< HEAD:imagePreprocessor/ColorFilter.py
-=======
-    """
-    여기다가 각자 코드 추가하셔서 merge하시면 될 것 같습니다.
-    """
-    def feat2(self):
-      pass
-    def feat3(self):
-      pass
-
->>>>>>> 8b5c6f36a8ebb5f6e84f06df6c24bc2c4aa5be19:ImagePreprocessor.py
 
 #실행 예제
 if __name__ == "__main__":
@@ -98,7 +87,7 @@ if __name__ == "__main__":
     image_path = './picture/100.jpg'
 
     #이미지전처리기 실행
-    processor = ImagePreprocessor(image_path)
+    processor = ColorFilter(image_path)
     user_color = (201, 251, 206)
     processor.custom_colorfilter(user_color)
     processor.show()
