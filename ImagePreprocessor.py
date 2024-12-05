@@ -1,7 +1,5 @@
 import cv2
 class ImagePreprocessor():
-    def __init__(self):
-        pass
     def count_faces(self,image_path):
         # Haar Cascade 모델 로드
         face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
@@ -47,6 +45,3 @@ class ImagePreprocessor():
         pass
     def feat5(self):
         pass
-
-
-
