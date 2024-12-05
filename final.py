@@ -37,19 +37,14 @@ class ImagePreprocessor()
     number_of_faces = count_faces(image_path)
     print(f"이미지에서 발견된 얼굴의 수: {number_of_faces}")
     
+    def feat2(self):
+        pass
     def feat3(self):
-      pass
+        pass
+    def feat4(self):
+        pass
+    def feat5(self):
+        pass
 
 
-#실행 예제
-if __name__ == "__main__":
-    #이미지 경로 설정
-    image_path = './data/4.jpg'
 
-    #이미지전처리기 실행
-    processor = ImagePreprocessor(image_path)
-    user_color = (201, 251, 206)
-    processor.custom_colorfilter(user_color)
-    processor.count_faces()
-    #processor.deepskyblue_colorfilter()
-    processor.show()
