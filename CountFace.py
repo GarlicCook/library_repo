@@ -1,6 +1,6 @@
 import cv2
 
-class ImagePreprocessor():
+class CountFace():
     def __init__(self, image_path=None):
         self.image_path = image_path  # 이미지 경로 초기화
     
@@ -42,22 +42,11 @@ class ImagePreprocessor():
         cv2.destroyAllWindows()
 
         return len(faces)
-    
-    def feat1(self):
-        pass
-    def feat2(self):
-        pass
-    def feat3(self):
-        pass
-    def feat4(self):
-        pass
-    def feat5(self):
-        pass
 
 
 # 사용 예시
 image_path = 'sample_image/gang.jpg'  # 이미지 파일 경로
-preprocessor = ImagePreprocessor(image_path)  # 클래스 인스턴스 생성 및 경로 초기화
+preprocessor = CountFace(image_path)  # 클래스 인스턴스 생성 및 경로 초기화
 
 # 얼굴 탐지 실행
 number_of_faces = preprocessor.count_faces()
