@@ -1,11 +1,11 @@
 import cv2
 class ImagePreprocessor()
-    def count_faces(image_path):
+    def count_faces(self,image_path):
         # Haar Cascade 모델 로드
         face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
         
         # 이미지 로드
-        image = cv2.imread(image_path)
+        image = cv2.imread(self.image_path)
         if image is None:
             print("이미지를 로드할 수 없습니다. 경로를 확인하세요.")
             return 0
