@@ -11,7 +11,8 @@ class ColorFilter():
         if len(self.image.shape) == 3:  # 컬러 이미지인 경우
             gray = cv2.cvtColor(self.image, cv2.COLOR_BGR2GRAY)  # 흑백 변환
         else:
-            gray = self.image  # 이미 흑백인 경우 그대로 사용
+            gray = self.image # 이미 흑백인 경우 그대로 사용
+        self.image = gray
         return gray
 
     #사용자 정의 색상 필터 color: (B, G, R)
