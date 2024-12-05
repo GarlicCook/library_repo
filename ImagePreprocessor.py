@@ -1,5 +1,5 @@
 import cv2
-class ImagePreprocessor()
+class ImagePreprocessor():
     def __init__(self):
         pass
     def feat1(self):
