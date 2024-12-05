@@ -1,6 +1,5 @@
 import cv2  
-class ImagePreprocessor():
-    def count_faces(image_path):
+def count_faces(image_path):
         # Haar Cascade 모델 로드
         face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
         
