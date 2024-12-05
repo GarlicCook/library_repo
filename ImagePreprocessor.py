@@ -1,10 +1,14 @@
 import cv2
 
 class ImagePreprocessor():
-    def __init__(self, image_path):
+    def __init__(self, image_path=None):
         self.image_path = image_path  # 이미지 경로 초기화
 
     def count_faces(self):
+        if not self.image_path:
+            print("이미지 경로가 설정되지 않았습니다.")
+            return 0
+        
         # Haar Cascade 모델 로드
         face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
@@ -34,6 +38,16 @@ class ImagePreprocessor():
 
         return len(faces)
 
+    def feat1(self):
+        pass
+    def feat2(self):
+        pass
+    def feat3(self):
+        pass
+    def feat4(self):
+        pass
+    def feat5(self):
+        pass
 
 # 로컬 이미지 경로 설정 및 클래스 인스턴스 생성
 image_path = 'sample_image/gang.jpg'  # 이미지 파일 경로
@@ -42,4 +56,3 @@ preprocessor = ImagePreprocessor(image_path)
 # 얼굴 탐지 실행
 number_of_faces = preprocessor.count_faces()
 print(f"이미지에서 발견된 얼굴의 수: {number_of_faces}")
-
