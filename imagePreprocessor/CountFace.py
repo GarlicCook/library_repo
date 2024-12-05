@@ -43,13 +43,13 @@ class CountFace():
 
         return len(faces)
 
-
+if __name__ == "__main__":
 # 사용 예시
-image_path = 'data/gang.jpg'  # 이미지 파일 경로
-preprocessor = CountFace(image_path)  # 클래스 인스턴스 생성 및 경로 초기화
+    image_path = 'data/gang.jpg'  # 이미지 파일 경로
+    preprocessor = CountFace(image_path)  # 클래스 인스턴스 생성 및 경로 초기화
 
 # 얼굴 탐지 실행
-number_of_faces = preprocessor.count_faces()
-print(f"이미지에서 발견된 얼굴의 수: {number_of_faces}")
+    number_of_faces = preprocessor.count_faces()
+    print(f"이미지에서 발견된 얼굴의 수: {number_of_faces}")
 
     
