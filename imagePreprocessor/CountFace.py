@@ -45,7 +45,7 @@ class CountFace():
 
 
 # 사용 예시
-image_path = 'sample_image/gang.jpg'  # 이미지 파일 경로
+image_path = 'data/gang.jpg'  # 이미지 파일 경로
 preprocessor = CountFace(image_path)  # 클래스 인스턴스 생성 및 경로 초기화
 
 # 얼굴 탐지 실행
