@@ -3,6 +3,16 @@ import cv2
 class ImagePreprocessor():
     def __init__(self, image_path=None):
         self.image_path = image_path  # 이미지 경로 초기화
+    def feat1(self):
+        pass
+    def feat2(self):
+        pass
+    def feat3(self):
+        pass
+    def feat4(self):
+        pass
+    def feat5(self):
+        pass
 
     def count_faces(self):
         if not self.image_path:
@@ -37,15 +47,6 @@ class ImagePreprocessor():
         cv2.destroyAllWindows()
 
         return len(faces)
-
-    def feat1(self):
-        pass
-    def feat3(self):
-        pass
-    def feat4(self):
-        pass
-    def feat5(self):
-        pass
 
 # 로컬 이미지 경로 설정 및 클래스 인스턴스 생성
 image_path = 'sample_image/gang.jpg'  # 이미지 파일 경로
