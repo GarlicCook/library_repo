@@ -4,12 +4,12 @@ import os
 
 class CustomBlurFilter:
     def __init__(self, image_path):
-        self.image_path = os.path.join(image_path)  # 파일 경로 설정
+        self.image_path = image_path  
         self.image = None
         self.enhanced_blurred_image = None
 
     def load_image(self):
-        # 한글 경로 처리
+        # 이미지 경로가 잘못되었을 때 예외 처리 추가
         if not os.path.exists(self.image_path):
             raise FileNotFoundError(f"File not found: {self.image_path}")
         
@@ -22,13 +22,20 @@ class CustomBlurFilter:
         if self.image is None:
             raise ValueError("Image not loaded. Call load_image() first.")
         
-        # 이미지 밝기 및 대비 향상
-        lab = cv2.cvtColor(self.image, cv2.COLOR_BGR2LAB)
-        l, a, b = cv2.split(lab)
+        # 이미지 밝기 및 대비 향상 (CLAHE 적용)
+        lab_image = cv2.cvtColor(self.image, cv2.COLOR_BGR2LAB)
+        l, a, b = cv2.split(lab_image)
         clahe = cv2.createCLAHE(clipLimit=clip_limit, tileGridSize=tile_grid_size)
         l = clahe.apply(l)
-        lab = cv2.merge((l, a, b))
-        enhanced_image = cv2.cvtColor(lab, cv2.COLOR_LAB2BGR)
+        enhanced_image = cv2.merge((l, a, b))
+        enhanced_image = cv2.cvtColor(enhanced_image, cv2.COLOR_LAB2BGR)
+
+        # 히스토그램 평활화 (명도 채널에만 적용)
+        lab_image = cv2.cvtColor(enhanced_image, cv2.COLOR_BGR2LAB)
+        l, a, b = cv2.split(lab_image)
+        l = cv2.equalizeHist(l)  # 명도 채널에 히스토그램 평활화
+        enhanced_image = cv2.merge((l, a, b))
+        enhanced_image = cv2.cvtColor(enhanced_image, cv2.COLOR_LAB2BGR)
 
         # 가우시안 블러 적용
         self.enhanced_blurred_image = cv2.GaussianBlur(enhanced_image, blur_ksize, 0)
@@ -38,6 +45,16 @@ class CustomBlurFilter:
         if self.image is None or self.enhanced_blurred_image is None:
             raise ValueError("Images not processed. Ensure load_image() and enhance_and_blur() are called.")
         
+        # 화면 크기에 맞게 자동 리사이즈 (옵션)
+        max_width, max_height = 800, 800
+        height, width = self.image.shape[:2]
+        scale = min(max_width / width, max_height / height)
+        if scale < 1:
+            new_width = int(width * scale)
+            new_height = int(height * scale)
+            self.image = cv2.resize(self.image, (new_width, new_height))
+            self.enhanced_blurred_image = cv2.resize(self.enhanced_blurred_image, (new_width, new_height))
+
         cv2.imshow("Original Image", self.image)
         cv2.imshow("Enhanced and Blurred Image", self.enhanced_blurred_image)
         cv2.waitKey(0)
@@ -46,11 +63,9 @@ class CustomBlurFilter:
 
 # 실행 예제
 if __name__ == "__main__":
-    # 이미지 경로 설정
-    image_path = os.path.join("./library_repo/Example Image", "steak.jpg")  # 경로에 맞게 수정하세요
+    image_path = os.path.join("example.jpg")  # 경로에 맞게 수정하세요
     
     try:
-        # CustomBlurFilter 사용
         filter_instance = CustomBlurFilter(image_path)
         filter_instance.load_image()
         filter_instance.enhance_and_blur()
