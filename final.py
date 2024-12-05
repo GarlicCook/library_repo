@@ -1,3 +1,4 @@
+import cv2
 class ImagePreprocessor()
     def count_faces(image_path):
         # Haar Cascade 모델 로드
