@@ -40,8 +40,6 @@ class ImagePreprocessor():
 
     def feat1(self):
         pass
-    def feat2(self):
-        pass
     def feat3(self):
         pass
     def feat4(self):
