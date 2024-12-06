@@ -12,7 +12,7 @@ $ pip install imgPreprocessor
 # usage e.g.
 
 ```python
-from img import extract_color_palette, plot_palette,
+from imgPreprocessor import extract_color_palette, plot_palette,
 
 plot_palette((extract_color_palette("image_path.jpg"))) 
 ```
