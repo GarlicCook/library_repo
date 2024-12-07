@@ -54,7 +54,23 @@ modexif("image_path.jpg", "output_path.jpg", make = "samsung", model = "S24", da
 ```
 
 
-### authors
+
+# License Information for Dependencies
+
+This project uses the following third-party libraries, each with its respective license:
+
+1. **Matplotlib** - [BSD-style License](https://matplotlib.org/stable/users/license.html)  
+2. **Pillow** - [HPND License](https://pillow.readthedocs.io/en/stable/about.html#license)  
+3. **OpenCV (opencv-python)** - [Apache License 2.0](https://github.com/opencv/opencv/blob/master/LICENSE)  
+4. **NumPy** - [BSD License](https://numpy.org/doc/stable/license.html)  
+5. **Piexif** - [MIT License](https://piexif.readthedocs.io/en/latest/about.html#License)  
+6. **Scikit-learn** - [BSD License](https://github.com/scikit-learn/scikit-learn?tab=BSD-3-Clause-1-ov-file)
+
+
+
+
+
+# authors
 
 - [GarlicCook](mailto:kms300508@gmail.com)
 - [ugyo](mailto:rss1234567@hanyang.ac.kr)
