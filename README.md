@@ -79,3 +79,7 @@ This project uses the following third-party libraries, each with its respective 
 - [hong02jp](mailto:hong02jp@gmail.com)
 
 
+## More Information
+
+- [Documentaion](https://img-docs.readthedocs.io/en/latest/)
+
