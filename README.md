@@ -9,6 +9,7 @@
 $ pip install imgPreprocessor
 ```
 
+
 # usage e.g.
 
 ```python
@@ -82,4 +83,5 @@ This project uses the following third-party libraries, each with its respective 
 ## More Information
 
 - [Documentaion](https://img-docs.readthedocs.io/en/latest/)
+- [PyPI](https://pypi.org/project/imgPreprocessor/)
 
